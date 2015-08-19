@@ -1,0 +1,27 @@
+#! /bin/bash
+
+INPUT=~/Dropbox/hours_worked.txt
+
+exec 5< $INPUT
+
+TOTAL_SECS=$(expr 0)
+
+while read line1 <&5 ; do
+	read line2 <&5
+#	echo $line1 $line2
+	timeIn=`echo $line1 | grep -o '[0-9]\+' `
+	timeOut=`echo $line2 | grep -o '[0-9]\+' `
+	if [ -z "$line2" ]; then
+		timeOut=`date +%s`
+	fi
+	TOTAL_SECS=$(($TOTAL_SECS+$timeOut-$timeIn))
+done
+
+echo $TOTAL_SECS seconds
+HOURS=$(($TOTAL_SECS / 3600))
+TOTAL_SECS=$(($TOTAL_SECS % 3600))
+MINS=$(($TOTAL_SECS / 60))
+SECS=$((TOTAL_SECS % 60))
+
+printf "%.3dh, %.2dm, %.2ds " $HOURS $MINS $SECS
+echo

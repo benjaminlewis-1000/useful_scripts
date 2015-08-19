@@ -1,0 +1,11 @@
+#! /bin/bash
+
+if [ -f ~/.out ]; then
+	echo "Already clocked out"
+fi
+if [ -f ~/.in ]; then
+	rm ~/.in
+	touch ~/.out
+	echo "Out: `date +%s`" >> ~/Dropbox/hours_worked.txt
+	./readTime
+fi
