@@ -1,4 +1,6 @@
 #!/bin/bash
+# Script off the internet. Lists the devices on the 
+# USB bus with their /dev ports and the device names.
 
 for sysdevpath in $(find /sys/bus/usb/devices/usb*/ -name dev); do
     (

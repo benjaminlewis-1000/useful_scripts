@@ -1,4 +1,7 @@
 #! /bin/bash
+# Simple clock in/ clock out script, syncing 
+# to Dropbox. This assumes that dropbox is installed,
+# I didn't work hard to make this super robust.
 
 if [ -f ~/.in ]; then
 	echo "Already clocked in"

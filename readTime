@@ -1,4 +1,6 @@
 #! /bin/bash
+# Read the times in and out from a file and
+# calculate the H/M/S worked
 
 INPUT=~/Dropbox/hours_worked.txt
 
