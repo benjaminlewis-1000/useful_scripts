@@ -9,5 +9,5 @@ if [ -f ~/.in ]; then
 	rm ~/.in
 	touch ~/.out
 	echo "Out: `date +%s`" >> ~/Dropbox/hours_worked.txt
-	./readTime
+	~/.scripts/readTime
 fi

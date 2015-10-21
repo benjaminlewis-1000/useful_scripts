@@ -9,5 +9,5 @@ fi
 if [ -f ~/.out ]; then
 	rm ~/.out
 	touch ~/.in
-	echo "In: `date +%s`" >> ~/Dropbox/hours_worked.txt
+	echo "In : `date +%s`" >> ~/Dropbox/hours_worked.txt
 fi
