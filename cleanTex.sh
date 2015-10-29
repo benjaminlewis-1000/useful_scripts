@@ -4,11 +4,11 @@ if [ ! -d "build" ]; then
 	mkdir build
 fi
 
-FILE="$(ls *out 2>/dev/null)"
+FILE="$(ls *log 2>/dev/null)"
 
 for i in $FILE; do
         echo Moving PDF: $i
-        BASE="$(basename $i .out)"
+        BASE="$(basename $i .log)"
         BASE+=.pdf
         mv $BASE build/ 2>/dev/null
 done
@@ -24,5 +24,6 @@ mv *out build/ 2>/dev/null
 mv *bbl build/ 2>/dev/null
 mv *blg build/ 2>/dev/null
 mv *brf build/ 2>/dev/null
+mv *dvi build/ 2>/dev/null
 
 
