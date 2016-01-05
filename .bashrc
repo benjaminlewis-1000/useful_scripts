@@ -59,6 +59,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
+# Git prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;32m\] \W\[\033[00;33m\]$(__git_ps1)\[\033[01;32m\] \$\[\033[00m\] '
 
