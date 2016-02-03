@@ -1,0 +1,15 @@
+#! /bin/bash
+
+cp ~/.bash_eternal_history ~/.bash_tmp
+
+sed '/ls$/d' ~/.bash_tmp | sed '/cd$/d' | 
+sed '/source \.bashrc/d' | 
+#sed '/source ~/.bashrc$/d' |
+sed '/sl$/d' |
+sed '/\.\./d' | 
+sed '/\.\.\./d' | 
+sed '/#/d' | 
+sed '/vim \.bash_eternal_history/d' | 
+sed '/ifconfig$/d' |
+sed '/clean_bash_history/d' |
+sed '/\.\.\.\./d'  > ~/.bash_eternal_history

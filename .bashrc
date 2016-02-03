@@ -12,8 +12,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+#HISTSIZE=1000
+#HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -59,7 +59,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# Git prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;32m\] \W\[\033[00;33m\]$(__git_ps1)\[\033[01;32m\] \$\[\033[00m\] '
 
@@ -82,9 +81,9 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    alias ..='cd ..'
-    alias ...='cd ../..'
-    alias ....='cd ../../..'
+    alias ..='cd .. ; pwd; ls'
+    alias ...='cd ../..; pwd; ls'
+    alias ....='cd ../../..; pwd; ls'
     alias caedm='ssh bpl5@ssh.et.byu.edu'
     alias magic='ssh magiccvs'
     alias clr='clear'
@@ -142,6 +141,16 @@ source /opt/ros/indigo/setup.bash
 source ~/catkin_ws/devel/setup.bash
 export EDITOR='vim'
 
+export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+export HISTFILESIZE=
+export HISTSIZE=
+
+export HISTFILE=~/.bash_eternal_history
+
+~/.scripts/.clean_bash_history
+
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 PERL_MB_OPT="--install_base \"/home/lewis/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/lewis/perl5"; export PERL_MM_OPT;
 
@@ -154,3 +163,5 @@ export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
 
 export PATH="$PATH:/usr/local/cuda-6.5/bin"
+export GAZEBO_MODEL_DATABASE_URI=http://old.gazebosim.org/models
+

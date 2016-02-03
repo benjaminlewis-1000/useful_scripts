@@ -26,4 +26,6 @@ mv *blg build/ 2>/dev/null
 mv *brf build/ 2>/dev/null
 mv *dvi build/ 2>/dev/null
 
+rm *~ 2>/dev/null
+
 
