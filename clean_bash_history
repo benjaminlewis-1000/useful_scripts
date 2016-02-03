@@ -1,5 +1,12 @@
 #! /bin/bash
 
+OPEN=`lsof -c vim | grep ~/.bash_eternal_history`
+if [[ ! -z $OPEN ]] ; then 
+#	echo "OPEN!" 
+# Checks to see if .bash_eternal_history is open; if so, exit the program;
+    exit
+fi
+
 cp ~/.bash_eternal_history ~/.bash_tmp
 
 sed '/ls$/d' ~/.bash_tmp | sed '/cd$/d' | 
