@@ -15,7 +15,22 @@ sed '/source \.bashrc/d' |
 sed '/sl$/d' |
 sed '/\.\./d' | 
 sed '/\.\.\./d' | 
+sed '/nautilus \./d' | 
+sed '/make/d' |
 sed '/#/d' | 
+sed '/git add -A/d' | 
+sed '/git push/d' | 
+sed '/git pull/d' |
+sed '/git status/d' | 
+sed '/git commit/d' | 
+sed '/git init$/d' |
+sed '/exit/d' |
+sed '/cd -/d' |
+sed '/cd$/d' |
+sed '/gedit$/d' |
+sed '/catkin_make$/d' |
+sed '/pwd/d' |
+sed '/ping/d' |
 sed '/vim \.bash_eternal_history/d' | 
 sed '/ifconfig$/d' |
 sed '/clean_bash_history/d' |
