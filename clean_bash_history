@@ -30,8 +30,13 @@ sed '/cd$/d' |
 sed '/gedit$/d' |
 sed '/catkin_make$/d' |
 sed '/pwd/d' |
+sed '/fg/d' |
+sed '/jobs$/d' |
+sed '/sudo apt-get update$/d' |
 sed '/ping/d' |
-sed '/vim \.bash_eternal_history/d' | 
+sed '/make/d' |
+sed '/roscore/d' |
+sed '/vim \.bash_eternal_history$/d' | 
 sed '/ifconfig$/d' |
 sed '/clean_bash_history/d' |
 sed '/\.\.\.\./d'  > ~/.bash_eternal_history
