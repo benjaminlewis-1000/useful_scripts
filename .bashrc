@@ -137,8 +137,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-source /opt/ros/indigo/setup.bash
-source ~/catkin_ws/devel/setup.bash
+#source /opt/ros/indigo/setup.bash
+#source ~/catkin_ws/devel/setup.bash
 export EDITOR='vim'
 
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
@@ -147,7 +147,7 @@ export HISTSIZE=
 
 export HISTFILE=~/.bash_eternal_history
 
-~/.scripts/.clean_bash_history
+~/.scripts/clean_bash_history
 
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
