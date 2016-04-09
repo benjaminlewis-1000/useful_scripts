@@ -1,0 +1,10 @@
+# ~/.bash_aliases
+alias clockIn='~/.scripts/clockIn'
+alias clockOut='~/.scripts/clockOut'
+alias in='clockIn'
+alias out='clockOut'
+alias readTime='~/.scripts/readTime'
+alias usbdevices='~/.scripts/usbDevicePorts'
+alias citeUpdate='cat ~/Research/Research_notes/papers.bib > ~/Dropbox/Research/paper_acc/citations.bib && cat ~/Research/Research_notes/software.bib >> ~/Dropbox/Research/paper_acc/citations.bib'
+alias cleanTex='~/.scripts/cleanTex.sh'
+alias matlab='/usr/local/MATLAB/R2015b/bin/matlab'
