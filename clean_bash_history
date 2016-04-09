@@ -39,4 +39,5 @@ sed '/roscore/d' |
 sed '/vim \.bash_eternal_history$/d' | 
 sed '/ifconfig$/d' |
 sed '/clean_bash_history/d' |
+sed '/rqt_graph/d' |
 sed '/\.\.\.\./d'  > ~/.bash_eternal_history

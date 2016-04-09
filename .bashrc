@@ -138,8 +138,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 source /opt/ros/indigo/setup.bash
-source ~/catkin_ws/devel/setup.bash
-export EDITOR='vim'
+#source ~/catkin_ws/devel/setup.bash
+#source ~/sim_ws/devel/setup.bash
+source ~/joy_magicc_ws/devel/setup.bash
+export EDITOR='subl'
 
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 export HISTFILESIZE=
@@ -147,7 +149,7 @@ export HISTSIZE=
 
 export HISTFILE=~/.bash_eternal_history
 
-~/.scripts/.clean_bash_history
+~/.scripts/clean_bash_history
 
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
@@ -165,3 +167,14 @@ export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
 export PATH="$PATH:/usr/local/cuda-6.5/bin"
 export GAZEBO_MODEL_DATABASE_URI=http://old.gazebosim.org/models
 
+rmTrash() {
+    if [ "$#" -eq 0 ]; then
+        echo "Can't rm with no args"
+        return
+    fi
+ # ls "$@"
+    cp -r --backup=t "$@" $HOME/.local/share/Trash/files
+    rm "$@"
+}
+
+alias rmv=rmTrash
