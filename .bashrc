@@ -137,11 +137,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+<<<<<<< HEAD
 source /opt/ros/indigo/setup.bash
 #source ~/catkin_ws/devel/setup.bash
 #source ~/sim_ws/devel/setup.bash
 source ~/joy_magicc_ws/devel/setup.bash
 export EDITOR='subl'
+=======
+#source /opt/ros/indigo/setup.bash
+#source ~/catkin_ws/devel/setup.bash
+export EDITOR='vim'
+>>>>>>> 476eff6d7023a1e336b595b0a8af0fb36e13abf4
 
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 export HISTFILESIZE=
